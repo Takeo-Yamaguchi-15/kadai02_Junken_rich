@@ -1,0 +1,71 @@
+/* 全体レイアウト */
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background: #faf7f0;
+}
+
+/*キャラクター絵のエリア */
+#battlefield {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 4rem;
+  margin: 1rem 0;
+}
+
+#battlefield img {
+  width: 160px;          
+  image-rendering: pixelated;   /* ドット絵をにじませない */
+}
+
+/* HP 表示 */
+#status {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* コマンドボタン */
+#controls button {
+  margin: 0.3rem;
+  padding: 0.4rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+}
+
+#controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+#controls button img {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  margin-right: 0.3rem;
+}
+
+/* ログメッセージ */
+#log {
+  margin-top: 1rem;
+  min-height: 2em;
+  font-weight: bold;
+}
+
+/* 攻撃を受けた時に軽く揺らすアニメーション */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX( 6px); }
+}
+
+.shake {
+  animation: shake 0.4s ease-in-out;
+}
+
